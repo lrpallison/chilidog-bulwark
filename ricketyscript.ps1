@@ -26,6 +26,7 @@ function get-scripted {
         [int] $numberofposts #makes it so that the input for this function needs to be an integer
       )
 
+<<<<<<< HEAD
     $redditresults=Invoke-RestMethod -Uri "https://www.reddit.com/r/reactiongifs/controversial/.json" 
     $redditresults=$redditresults | ConvertFrom-Json #try to figure out how to pull the data in json -- not currently working
     #1..$numberofposts | ForEach-Object {$_, $redditresults.title[$_]}
@@ -36,6 +37,17 @@ function get-scripted {
 
 #get-scripted 5 -verbose
 $redditresults
+=======
+    $redditresults=Invoke-RestMethod -Uri "https://www.reddit.com/r/reactiongifs/controversial/.xml" 
+    1..$numberofposts | ForEach-Object {$_, $redditresults.title[$_]}
+    #figure out how to display the graphics from the memes either in an html site that you can structure or in a gui that I create
+    #I know sometimes c# can be used in addition to build out certian parts later on
+   
+}
+
+get-scripted 5 -verbose
+
+>>>>>>> bcabec34d1e7793723510968316ebd80fb19c2b7
 
 #NOTES TO SELF ON COOL THINGS TO ADD IN. ADD AND REMOVE AS NEEDED
 
